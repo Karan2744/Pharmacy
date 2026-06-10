@@ -51,6 +51,12 @@ const OrderSchema = new mongoose.Schema(
     cgst:          { type: Number, default: 0 },
     sgst:          { type: Number, default: 0 },
     gstTotal:      { type: Number, default: 0 },
+    channel: {
+      type: String,
+      enum: ['online', 'offline'],
+      default: 'online',
+    },
+    note: { type: String, default: '' },
   },
   {
     timestamps: true,

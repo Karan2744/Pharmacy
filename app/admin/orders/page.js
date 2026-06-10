@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import dynamic from "next/dynamic";
 import Sidebar from "@/app/admin/Components/sidebar";
 import Header from "@/app/admin/Components/Header";
-import { Search, Package, Eye, X, FileText, ScanLine } from "lucide-react";
+import { Search, Package, Eye, X, FileText, ScanLine, Globe, Store, Plus } from "lucide-react";
 
 const InvoiceBill = dynamic(() => import("@/components/InvoiceBill"), { ssr: false });
 const QRScanner   = dynamic(() => import("@/components/QRScanner"),   { ssr: false });
@@ -245,6 +245,7 @@ export default function AdminOrdersPage() {
   const [activeTab, setActiveTab] = useState("Orders");
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [statusFilter, setStatusFilter] = useState("All");
+  const [channelFilter, setChannelFilter] = useState("All");
   const [search, setSearch] = useState("");
   const [selectedOrder, setSelectedOrder] = useState(null);
   const [invoiceOrder, setInvoiceOrder]   = useState(null);
@@ -306,20 +307,23 @@ export default function AdminOrdersPage() {
 
   // Filtered list
   const filteredOrders = orders.filter((o) => {
-    const matchStatus = statusFilter === "All" || o.status === statusFilter;
-    const matchSearch =
+    const matchStatus  = statusFilter === "All" || o.status === statusFilter;
+    const matchChannel = channelFilter === "All"
+      || (channelFilter === "Online"  && o.channel !== "offline")
+      || (channelFilter === "Offline" && o.channel === "offline");
+    const matchSearch  =
       !search ||
       (o.user?.name || "").toLowerCase().includes(search.toLowerCase()) ||
       (o.user?.email || "").toLowerCase().includes(search.toLowerCase()) ||
       o._id.toLowerCase().includes(search.toLowerCase());
-    return matchStatus && matchSearch;
+    return matchStatus && matchChannel && matchSearch;
   });
 
   return (
     <div className="min-h-screen bg-white">
       <Sidebar activeTab={activeTab} setActiveTab={setActiveTab} isSidebarOpen={isSidebarOpen} setIsSidebarOpen={setIsSidebarOpen} />
 
-      <div className="lg:ml-72 min-h-screen flex flex-col">
+      <div className="lg:ml-64 min-h-screen flex flex-col">
         <Header isSidebarOpen={isSidebarOpen} setIsSidebarOpen={setIsSidebarOpen} />
 
         <main className="flex-1">
@@ -383,6 +387,24 @@ export default function AdminOrdersPage() {
                 </button>
               ))}
             </div>
+            {/* Channel filter */}
+            <div className="flex items-center gap-1 ml-auto">
+              {["All", "Online", "Offline"].map(ch => (
+                <button
+                  key={ch}
+                  onClick={() => setChannelFilter(ch)}
+                  className={`flex items-center gap-1 px-2.5 py-1 text-xs border transition-colors ${
+                    channelFilter === ch
+                      ? "border-gray-900 bg-gray-900 text-white"
+                      : "border-gray-200 text-gray-500 hover:bg-gray-50"
+                  }`}
+                >
+                  {ch === "Online"  && <Globe size={10} />}
+                  {ch === "Offline" && <Store size={10} />}
+                  {ch}
+                </button>
+              ))}
+            </div>
           </div>
 
           {/* Table */}
@@ -403,7 +425,7 @@ export default function AdminOrdersPage() {
               <table className="w-full text-left min-w-[800px]">
                 <thead>
                   <tr className="border-b border-gray-200">
-                    {["Order","Customer","Items","Amount","Status","Date",""].map((h) => (
+                    {["Order","Customer","Channel","Items","Amount","Status","Date",""].map((h) => (
                       <th key={h} className="px-5 py-2.5 text-[10px] font-semibold uppercase tracking-widest text-gray-400">{h}</th>
                     ))}
                   </tr>
@@ -424,6 +446,14 @@ export default function AdminOrdersPage() {
                         <td className="px-5 py-3">
                           <p className="text-sm text-gray-900">{order.user?.name || "—"}</p>
                           <p className="text-xs text-gray-400 mt-0.5">{order.user?.email || ""}</p>
+                        </td>
+
+                        {/* Channel */}
+                        <td className="px-5 py-3">
+                          {order.channel === "offline"
+                            ? <span className="inline-flex items-center gap-1 text-[11px] font-medium px-2 py-0.5 bg-indigo-50 text-indigo-700"><Store size={10} /> Offline</span>
+                            : <span className="inline-flex items-center gap-1 text-[11px] font-medium px-2 py-0.5 bg-gray-100 text-gray-600"><Globe size={10} /> Online</span>
+                          }
                         </td>
 
                         {/* Items */}
