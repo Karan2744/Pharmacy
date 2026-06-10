@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { X, Camera, CheckCircle2, Clock, Truck, XCircle, RefreshCw } from "lucide-react";
 
-const PRIMARY = "#e73096";
+const PRIMARY = "#0070B3";
 
 const STATUS_OPTIONS = ["Processing", "Dispatched", "Delivered", "Cancelled"];
 
@@ -144,7 +144,7 @@ export default function QRScanner({ onClose }) {
         {/* Header */}
         <div className="flex items-center justify-between px-5 py-4 border-b border-gray-100">
           <div className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-xl flex items-center justify-center" style={{ backgroundColor: "#fce4f3" }}>
+            <div className="w-8 h-8 rounded-xl flex items-center justify-center" style={{ backgroundColor: "#EBF5FF" }}>
               <Camera size={16} style={{ color: PRIMARY }} />
             </div>
             <h2 className="font-black text-gray-900 text-base">Scan Order QR</h2>

@@ -6,8 +6,8 @@ import { useRouter } from "next/navigation";
 import { User, Phone, ArrowRight, Pill, CheckCircle } from "lucide-react";
 import { useCart } from "@/components/CartContext";
 
-const PRIMARY = "#e73096";
-const PRIMARY_DARK = "#c4007a";
+const PRIMARY = "#0070B3";
+const PRIMARY_DARK = "#005A92";
 
 export default function SignupPage() {
   const router = useRouter();
@@ -87,7 +87,7 @@ export default function SignupPage() {
         <div className="bg-white rounded-3xl shadow-xl border border-gray-100 overflow-hidden">
 
           {/* Header */}
-          <div className="px-8 pt-8 pb-6 text-center" style={{ background: "linear-gradient(135deg, #fce4f3 0%, #fff 100%)" }}>
+          <div className="px-8 pt-8 pb-6 text-center" style={{ background: "linear-gradient(135deg, #EBF5FF 0%, #fff 100%)" }}>
             <div className="w-14 h-14 rounded-2xl flex items-center justify-center mx-auto mb-4" style={{ backgroundColor: PRIMARY }}>
               <Pill size={26} className="text-white" />
             </div>

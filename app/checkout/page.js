@@ -8,7 +8,7 @@ export default function CheckoutRedirect() {
   useEffect(() => { router.replace("/checkout/address"); }, [router]);
   return (
     <div className="min-h-screen flex items-center justify-center">
-      <div className="w-8 h-8 border-2 border-t-transparent rounded-full animate-spin" style={{ borderColor: "#e73096" }} />
+      <div className="w-8 h-8 border-2 border-t-transparent rounded-full animate-spin" style={{ borderColor: "#0070B3" }} />
     </div>
   );
 }

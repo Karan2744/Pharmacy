@@ -7,8 +7,8 @@ import { Heart, ShoppingCart, Trash2, ArrowRight } from "lucide-react";
 import { slugify } from "@/lib/slugify";
 import { useRouter } from "next/navigation";
 
-const PRIMARY = "#e73096";
-const PRIMARY_DARK = "#c4007a";
+const PRIMARY = "#0070B3";
+const PRIMARY_DARK = "#005A92";
 
 export default function WishlistPage() {
   const { addToCart, isAuthenticated } = useCart();
@@ -46,7 +46,7 @@ export default function WishlistPage() {
       <div className="max-w-6xl mx-auto px-4 md:px-6 pt-6">
         {wishlist.length === 0 ? (
           <div className="bg-white rounded-2xl border border-gray-100 shadow-sm py-24 text-center">
-            <div className="w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-5" style={{ backgroundColor: "#fce4f3" }}>
+            <div className="w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-5" style={{ backgroundColor: "#EBF5FF" }}>
               <Heart size={36} style={{ color: PRIMARY }} />
             </div>
             <h2 className="text-xl font-extrabold text-gray-900 mb-2">Your wishlist is empty</h2>

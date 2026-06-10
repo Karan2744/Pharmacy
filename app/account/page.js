@@ -150,8 +150,8 @@ export default function AccountPage() {
           {/* Card */}
           <div className="bg-white rounded-3xl shadow-2xl shadow-blue-100/60 border border-gray-100/80 p-8 text-center">
             <div className="relative w-24 h-24 mx-auto mb-6">
-              <div className="absolute inset-0 bg-gradient-to-br from-[#e73096]/20 to-pink-600/20 rounded-full blur-xl" />
-              <div className="relative w-24 h-24 bg-gradient-to-br from-[#e73096] to-pink-600 rounded-full flex items-center justify-center shadow-lg shadow-pink-200">
+              <div className="absolute inset-0 bg-gradient-to-br from-[#0070B3]/20 to-pink-600/20 rounded-full blur-xl" />
+              <div className="relative w-24 h-24 bg-gradient-to-br from-[#0070B3] to-pink-600 rounded-full flex items-center justify-center shadow-lg shadow-pink-200">
                 <User size={40} className="text-white" />
               </div>
             </div>
@@ -161,7 +161,7 @@ export default function AccountPage() {
             </p>
             <button
               onClick={() => { window.location.href = "/login"; }}
-              className="w-full py-3.5 bg-gradient-to-r from-[#e73096] to-pink-600 text-white font-bold rounded-2xl hover:opacity-90 active:scale-[0.98] transition-all shadow-lg shadow-pink-200 text-sm flex items-center justify-center gap-2"
+              className="w-full py-3.5 bg-gradient-to-r from-[#0070B3] to-pink-600 text-white font-bold rounded-2xl hover:opacity-90 active:scale-[0.98] transition-all shadow-lg shadow-pink-200 text-sm flex items-center justify-center gap-2"
             >
               Login / Sign Up
               <ArrowRight size={16} />
@@ -220,7 +220,7 @@ export default function AccountPage() {
             <div className="bg-white rounded-3xl border border-gray-100 shadow-sm overflow-hidden">
 
               {/* Profile banner */}
-              <div className="relative bg-gradient-to-br from-[#e73096] to-pink-600 p-6 pb-10">
+              <div className="relative bg-gradient-to-br from-[#0070B3] to-pink-600 p-6 pb-10">
                 <div className="absolute inset-0 opacity-10"
                   style={{ backgroundImage: "radial-gradient(circle at 80% 20%, white 1px, transparent 1px)", backgroundSize: "24px 24px" }}
                 />
@@ -255,24 +255,24 @@ export default function AccountPage() {
                     onClick={() => setActiveTab(id)}
                     className={`w-full flex items-center gap-3 px-4 py-3 rounded-2xl text-sm font-bold transition-all duration-200 ${
                       activeTab === id
-                        ? "bg-gradient-to-r from-[#e73096]/10 to-pink-50 text-[#e73096] shadow-sm"
+                        ? "bg-gradient-to-r from-[#0070B3]/10 to-pink-50 text-[#0070B3] shadow-sm"
                         : "text-gray-600 hover:bg-gray-50"
                     }`}
                   >
                     <div className={`w-8 h-8 rounded-xl flex items-center justify-center shrink-0 transition-colors ${
-                      activeTab === id ? "bg-[#e73096] text-white shadow-md shadow-pink-200" : "bg-gray-100 text-gray-500"
+                      activeTab === id ? "bg-[#0070B3] text-white shadow-md shadow-pink-200" : "bg-gray-100 text-gray-500"
                     }`}>
                       <Icon size={16} />
                     </div>
                     <span className="flex-1 text-left">{label}</span>
                     {count != null && count > 0 && (
                       <span className={`text-[10px] font-black px-2 py-0.5 rounded-full ${
-                        activeTab === id ? "bg-[#e73096] text-white" : "bg-gray-100 text-gray-500"
+                        activeTab === id ? "bg-[#0070B3] text-white" : "bg-gray-100 text-gray-500"
                       }`}>
                         {count}
                       </span>
                     )}
-                    <ChevronRight size={14} className={`transition-colors ${activeTab === id ? "text-[#e73096]" : "text-gray-300"}`} />
+                    <ChevronRight size={14} className={`transition-colors ${activeTab === id ? "text-[#0070B3]" : "text-gray-300"}`} />
                   </button>
                 ))}
               </nav>
@@ -340,7 +340,7 @@ export default function AccountPage() {
                     </p>
                     <Link
                       href="/"
-                      className="inline-flex items-center gap-2 px-7 py-3 bg-gradient-to-r from-[#e73096] to-pink-600 text-white font-bold rounded-2xl text-sm hover:opacity-90 active:scale-[0.98] transition-all shadow-lg shadow-pink-200"
+                      className="inline-flex items-center gap-2 px-7 py-3 bg-gradient-to-r from-[#0070B3] to-pink-600 text-white font-bold rounded-2xl text-sm hover:opacity-90 active:scale-[0.98] transition-all shadow-lg shadow-pink-200"
                     >
                       Start Shopping
                       <ArrowRight size={16} />
@@ -382,7 +382,7 @@ export default function AccountPage() {
                               {(order.items || []).slice(0, 2).map((item, idx) => (
                                 <div key={idx} className="flex items-center justify-between gap-3">
                                   <div className="flex items-center gap-2.5 min-w-0">
-                                    <div className="w-2 h-2 rounded-full bg-[#e73096]/40 shrink-0" />
+                                    <div className="w-2 h-2 rounded-full bg-[#0070B3]/40 shrink-0" />
                                     <span className="text-sm text-gray-700 font-medium truncate">{item.name}</span>
                                   </div>
                                   <span className="text-sm text-gray-500 font-bold shrink-0 tabular-nums">
@@ -391,7 +391,7 @@ export default function AccountPage() {
                                 </div>
                               ))}
                               {extraItems > 0 && (
-                                <p className="text-xs text-[#e73096] font-bold pl-4.5">
+                                <p className="text-xs text-[#0070B3] font-bold pl-4.5">
                                   +{extraItems} more item{extraItems > 1 ? "s" : ""}
                                 </p>
                               )}
@@ -404,7 +404,7 @@ export default function AccountPage() {
                               <p className="text-[10px] text-gray-400 font-bold uppercase tracking-wider">Total</p>
                               <p className="text-xl font-black text-gray-900 tracking-tight">₹{order.total}</p>
                             </div>
-                            <button className="flex items-center gap-2 px-4 py-2.5 bg-white border-2 border-[#e73096]/30 text-[#e73096] font-bold text-xs rounded-xl hover:bg-pink-50 hover:border-[#e73096] active:scale-[0.97] transition-all shadow-sm">
+                            <button className="flex items-center gap-2 px-4 py-2.5 bg-white border-2 border-[#0070B3]/30 text-[#0070B3] font-bold text-xs rounded-xl hover:bg-pink-50 hover:border-[#0070B3] active:scale-[0.97] transition-all shadow-sm">
                               <Truck size={14} />
                               Track Order
                             </button>
@@ -439,7 +439,7 @@ export default function AccountPage() {
                       </label>
                       <div className="flex items-center gap-3 bg-gray-50 rounded-2xl px-4 py-3.5 border border-gray-100">
                         <div className="w-8 h-8 rounded-xl bg-blue-50 flex items-center justify-center shrink-0">
-                          <User size={15} className="text-[#e73096]" />
+                          <User size={15} className="text-[#0070B3]" />
                         </div>
                         <span className="text-sm font-bold text-gray-800">{user?.name || "—"}</span>
                       </div>
@@ -453,7 +453,7 @@ export default function AccountPage() {
                         </label>
                         <div className="flex items-center gap-3 bg-gray-50 rounded-2xl px-4 py-3.5 border border-gray-100">
                           <div className="w-8 h-8 rounded-xl bg-blue-50 flex items-center justify-center shrink-0">
-                            <Mail size={15} className="text-[#e73096]" />
+                            <Mail size={15} className="text-[#0070B3]" />
                           </div>
                           <span className="text-sm font-bold text-gray-800 truncate">{user.email}</span>
                         </div>
@@ -468,7 +468,7 @@ export default function AccountPage() {
                       Phone Number
                     </label>
                     <div className="flex items-center gap-3">
-                      <div className="flex items-center gap-3 bg-white rounded-2xl px-4 py-3.5 border-2 border-gray-200 focus-within:border-[#e73096] transition-colors flex-1 shadow-sm">
+                      <div className="flex items-center gap-3 bg-white rounded-2xl px-4 py-3.5 border-2 border-gray-200 focus-within:border-[#0070B3] transition-colors flex-1 shadow-sm">
                         <div className="w-8 h-8 rounded-xl bg-gray-50 flex items-center justify-center shrink-0">
                           <Phone size={15} className="text-gray-400" />
                         </div>
@@ -482,7 +482,7 @@ export default function AccountPage() {
                       </div>
                       <button
                         onClick={savePhone}
-                        className="px-5 py-3.5 bg-gradient-to-r from-[#e73096] to-pink-600 text-white font-bold text-sm rounded-2xl hover:opacity-90 active:scale-[0.97] transition-all shadow-md shadow-pink-200 shrink-0"
+                        className="px-5 py-3.5 bg-gradient-to-r from-[#0070B3] to-pink-600 text-white font-bold text-sm rounded-2xl hover:opacity-90 active:scale-[0.97] transition-all shadow-md shadow-pink-200 shrink-0"
                       >
                         Save
                       </button>
@@ -494,7 +494,7 @@ export default function AccountPage() {
                     <div className="flex items-center justify-between mb-4">
                       <p className="text-sm font-black text-gray-700">Delivery Address</p>
                       {address && (
-                        <Link href="/checkout" className="text-xs text-[#e73096] font-bold flex items-center gap-1 hover:gap-2 transition-all">
+                        <Link href="/checkout" className="text-xs text-[#0070B3] font-bold flex items-center gap-1 hover:gap-2 transition-all">
                           <Edit3 size={12} />
                           Edit
                         </Link>
@@ -505,8 +505,8 @@ export default function AccountPage() {
                     </label>
                     {address ? (
                       <div className="flex items-start gap-3.5 bg-gradient-to-br from-blue-50 to-indigo-50/50 rounded-2xl px-4 py-4 border border-blue-100">
-                        <div className="w-8 h-8 rounded-xl bg-[#e73096]/10 flex items-center justify-center shrink-0 mt-0.5">
-                          <MapPin size={15} className="text-[#e73096]" />
+                        <div className="w-8 h-8 rounded-xl bg-[#0070B3]/10 flex items-center justify-center shrink-0 mt-0.5">
+                          <MapPin size={15} className="text-[#0070B3]" />
                         </div>
                         <div className="text-sm text-gray-700 font-medium leading-relaxed">
                           <p className="font-bold text-gray-900">{address.street || address.line1}</p>
@@ -562,7 +562,7 @@ export default function AccountPage() {
                     </p>
                     <Link
                       href="/"
-                      className="inline-flex items-center gap-2 px-7 py-3 bg-gradient-to-r from-[#e73096] to-pink-600 text-white font-bold rounded-2xl text-sm hover:opacity-90 active:scale-[0.98] transition-all shadow-lg shadow-pink-200"
+                      className="inline-flex items-center gap-2 px-7 py-3 bg-gradient-to-r from-[#0070B3] to-pink-600 text-white font-bold rounded-2xl text-sm hover:opacity-90 active:scale-[0.98] transition-all shadow-lg shadow-pink-200"
                     >
                       Browse Products
                       <ArrowRight size={16} />
@@ -609,7 +609,7 @@ export default function AccountPage() {
 
                           <button
                             onClick={() => handleAddToCartFromWishlist(product)}
-                            className="w-full py-2 bg-gradient-to-r from-[#e73096] to-pink-600 text-white text-xs font-bold rounded-xl hover:opacity-90 active:scale-[0.97] transition-all shadow-sm shadow-blue-100"
+                            className="w-full py-2 bg-gradient-to-r from-[#0070B3] to-pink-600 text-white text-xs font-bold rounded-xl hover:opacity-90 active:scale-[0.97] transition-all shadow-sm shadow-blue-100"
                           >
                             Add to Cart
                           </button>
@@ -636,7 +636,7 @@ export default function AccountPage() {
             >
               <div className={`relative w-10 h-10 rounded-2xl flex items-center justify-center transition-all duration-200 ${
                 activeTab === id
-                  ? "bg-gradient-to-br from-[#e73096] to-pink-600 shadow-lg shadow-pink-200 scale-110"
+                  ? "bg-gradient-to-br from-[#0070B3] to-pink-600 shadow-lg shadow-pink-200 scale-110"
                   : "bg-gray-100"
               }`}>
                 <Icon size={18} className={activeTab === id ? "text-white" : "text-gray-400"} />
@@ -647,7 +647,7 @@ export default function AccountPage() {
                 )}
               </div>
               <span className={`text-[10px] font-bold transition-colors ${
-                activeTab === id ? "text-[#e73096]" : "text-gray-400"
+                activeTab === id ? "text-[#0070B3]" : "text-gray-400"
               }`}>
                 {label}
               </span>

@@ -31,7 +31,7 @@ function DeliveryCheck() {
   return (
     <div className="border border-gray-200 rounded-2xl p-4 space-y-3">
       <div className="flex items-center gap-2">
-        <Truck size={15} style={{ color: "#e73096" }} />
+        <Truck size={15} style={{ color: "#0070B3" }} />
         <span className="text-xs font-bold text-gray-700 uppercase tracking-wide">Check Delivery</span>
       </div>
       <div className="flex gap-2">
@@ -51,9 +51,9 @@ function DeliveryCheck() {
           onClick={check}
           disabled={loading || pin.length !== 6}
           className="px-4 py-2.5 disabled:opacity-40 text-white text-xs font-bold rounded-xl transition-colors"
-          style={{ backgroundColor: "#e73096" }}
-          onMouseEnter={(e) => { if (!e.currentTarget.disabled) e.currentTarget.style.backgroundColor = "#c4007a"; }}
-          onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "#e73096")}
+          style={{ backgroundColor: "#0070B3" }}
+          onMouseEnter={(e) => { if (!e.currentTarget.disabled) e.currentTarget.style.backgroundColor = "#005A92"; }}
+          onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "#0070B3")}
         >
           {loading ? "…" : "Check"}
         </button>
@@ -130,7 +130,7 @@ function BulletList({ items }) {
     <ul className="space-y-2.5">
       {items.map((item, i) => (
         <li key={i} className="flex items-start gap-2.5 text-sm text-gray-700 leading-relaxed">
-          <span className="w-1.5 h-1.5 rounded-full mt-2 shrink-0" style={{ backgroundColor: "#e73096" }} />
+          <span className="w-1.5 h-1.5 rounded-full mt-2 shrink-0" style={{ backgroundColor: "#0070B3" }} />
           {item}
         </li>
       ))}
@@ -141,13 +141,14 @@ function BulletList({ items }) {
 /* ── Substitute card ────────────────────────────────────────────────────── */
 function SubCard({ p }) {
   const gstPercent = p.adminGstPercent || 0;
+  const priceWithGst = p.price * (1 + gstPercent / 100);
   const mrpWithGst = p.mrp && gstPercent > 0 ? p.mrp * (1 + gstPercent / 100) : p.mrp;
-  const disc = mrpWithGst && p.price ? Math.round(((mrpWithGst - p.price) / mrpWithGst) * 100) : 0;
+  const disc = mrpWithGst && priceWithGst ? Math.round(((mrpWithGst - priceWithGst) / mrpWithGst) * 100) : 0;
   return (
     <Link
       href={`/medicine/${slugify(p.name)}-${p._id}`}
       className="flex items-center gap-3 p-3 rounded-2xl border border-gray-100 transition-all group"
-      onMouseEnter={(e) => { e.currentTarget.style.borderColor = "#e73096"; e.currentTarget.style.background = "#fdf0f7"; }}
+      onMouseEnter={(e) => { e.currentTarget.style.borderColor = "#0070B3"; e.currentTarget.style.background = "#fdf0f7"; }}
       onMouseLeave={(e) => { e.currentTarget.style.borderColor = ""; e.currentTarget.style.background = ""; }}
     >
       <div className="relative w-14 h-14 shrink-0 rounded-xl border border-gray-100 bg-gray-50 overflow-hidden">
@@ -316,7 +317,7 @@ export default function ProductDetailClient({ product, relatedProducts = [], sub
                   className={`relative w-14 h-14 rounded-xl overflow-hidden border-2 transition-all shrink-0 bg-white ${
                     activeImage === i ? "shadow-md" : "border-gray-200 hover:border-gray-300"
                   }`}
-                  style={activeImage === i ? { borderColor: "#e73096" } : {}}
+                  style={activeImage === i ? { borderColor: "#0070B3" } : {}}
                 >
                   <Image
                     src={img} alt={`View ${i + 1}`} fill
@@ -393,7 +394,7 @@ export default function ProductDetailClient({ product, relatedProducts = [], sub
               </p>
               <div className="flex items-center gap-2 flex-wrap mt-1.5">
                 {product.subCategory && (
-                  <span className="text-[10px] font-bold px-2.5 py-0.5 rounded-full" style={{ background: "#fce4f3", color: "#e73096" }}>
+                  <span className="text-[10px] font-bold px-2.5 py-0.5 rounded-full" style={{ background: "#EBF5FF", color: "#0070B3" }}>
                     {product.subCategory}
                   </span>
                 )}
@@ -423,8 +424,8 @@ export default function ProductDetailClient({ product, relatedProducts = [], sub
 
             {/* Salt composition */}
             {product.saltComposition && (
-              <div className="rounded-xl px-4 py-3" style={{ background: "#fce4f3", border: "1px solid #f8b4dd" }}>
-                <p className="text-[10px] font-bold uppercase tracking-wide mb-0.5" style={{ color: "#e73096" }}>Salt Composition</p>
+              <div className="rounded-xl px-4 py-3" style={{ background: "#EBF5FF", border: "1px solid #f8b4dd" }}>
+                <p className="text-[10px] font-bold uppercase tracking-wide mb-0.5" style={{ color: "#0070B3" }}>Salt Composition</p>
                 <p className="text-xs font-semibold text-gray-800">{product.saltComposition}</p>
               </div>
             )}
@@ -505,7 +506,7 @@ export default function ProductDetailClient({ product, relatedProducts = [], sub
               <p className="text-xs font-bold text-gray-500 uppercase tracking-wide mb-2">Key Highlights</p>
               <div className="flex flex-wrap gap-2">
                 {highlights.map((h) => (
-                  <span key={h} className="text-[11px] font-medium px-2.5 py-1 rounded-full border" style={{ background: "#fce4f3", color: "#e73096", borderColor: "#f8b4dd" }}>
+                  <span key={h} className="text-[11px] font-medium px-2.5 py-1 rounded-full border" style={{ background: "#EBF5FF", color: "#0070B3", borderColor: "#f8b4dd" }}>
                     ✓ {h}
                   </span>
                 ))}
@@ -532,9 +533,9 @@ export default function ProductDetailClient({ product, relatedProducts = [], sub
                   disabled={!inStock}
                   onClick={handleAddToCart}
                   className={`flex-1 flex items-center justify-center gap-2 py-3 rounded-xl font-bold text-sm transition-all ${!inStock ? "bg-gray-200 text-gray-400 cursor-not-allowed" : "text-white shadow-md"}`}
-                  style={inStock ? { backgroundColor: "#e73096" } : {}}
-                  onMouseEnter={(e) => { if (inStock) e.currentTarget.style.backgroundColor = "#c4007a"; }}
-                  onMouseLeave={(e) => { if (inStock) e.currentTarget.style.backgroundColor = "#e73096"; }}
+                  style={inStock ? { backgroundColor: "#0070B3" } : {}}
+                  onMouseEnter={(e) => { if (inStock) e.currentTarget.style.backgroundColor = "#005A92"; }}
+                  onMouseLeave={(e) => { if (inStock) e.currentTarget.style.backgroundColor = "#0070B3"; }}
                 >
                   <ShoppingCart size={16} /> Add to Cart
                 </button>
@@ -543,8 +544,8 @@ export default function ProductDetailClient({ product, relatedProducts = [], sub
                   disabled={!inStock}
                   onClick={handleBuyNow}
                   className={`flex-1 py-3 rounded-xl font-bold text-sm border-2 transition-all ${!inStock ? "border-gray-200 text-gray-400 cursor-not-allowed" : ""}`}
-                  style={inStock ? { borderColor: "#e73096", color: "#e73096" } : {}}
-                  onMouseEnter={(e) => { if (inStock) e.currentTarget.style.background = "#fce4f3"; }}
+                  style={inStock ? { borderColor: "#0070B3", color: "#0070B3" } : {}}
+                  onMouseEnter={(e) => { if (inStock) e.currentTarget.style.background = "#EBF5FF"; }}
                   onMouseLeave={(e) => { if (inStock) e.currentTarget.style.background = ""; }}
                 >
                   Buy Now
@@ -559,7 +560,7 @@ export default function ProductDetailClient({ product, relatedProducts = [], sub
             <div className="grid grid-cols-3 gap-2 pt-2 border-t border-gray-100">
               {[
                 { icon: <ShieldCheck size={15} className="text-green-500" />, label: "100% Genuine",    sub: "Certified medicines"  },
-                { icon: <RefreshCw   size={15} style={{ color: "#e73096" }} />, label: "7 Day Returns", sub: "Easy return policy"   },
+                { icon: <RefreshCw   size={15} style={{ color: "#0070B3" }} />, label: "7 Day Returns", sub: "Easy return policy"   },
                 { icon: <Truck       size={15} className="text-orange-500"/>, label: "Free Delivery",  sub: "Tamper-proof packing" },
               ].map((b) => (
                 <div key={b.label} className="flex flex-col items-center text-center p-2 bg-gray-50 rounded-xl">
@@ -604,8 +605,8 @@ export default function ProductDetailClient({ product, relatedProducts = [], sub
       <Section title="How to Use">
         <BulletList items={howToUse} />
         {product.storageInfo && (
-          <div className="mt-4 flex items-start gap-2.5 rounded-xl px-4 py-3" style={{ background: "#fce4f3", border: "1px solid #f8b4dd" }}>
-            <Pill size={14} className="mt-0.5 shrink-0" style={{ color: "#e73096" }} />
+          <div className="mt-4 flex items-start gap-2.5 rounded-xl px-4 py-3" style={{ background: "#EBF5FF", border: "1px solid #f8b4dd" }}>
+            <Pill size={14} className="mt-0.5 shrink-0" style={{ color: "#0070B3" }} />
             <div>
               <p className="text-xs font-bold text-gray-700 mb-0.5">Storage</p>
               <p className="text-xs text-gray-600">{product.storageInfo}</p>
@@ -687,7 +688,7 @@ export default function ProductDetailClient({ product, relatedProducts = [], sub
       <div className="bg-white rounded-2xl border border-gray-100 shadow-sm mt-4 p-5">
         <div className="flex flex-col sm:flex-row sm:items-center gap-4 text-xs text-gray-500">
           <div className="flex items-center gap-2.5">
-            <div className="w-8 h-8 rounded-full flex items-center justify-center font-bold text-xs shrink-0" style={{ background: "#fce4f3", color: "#e73096" }}>W</div>
+            <div className="w-8 h-8 rounded-full flex items-center justify-center font-bold text-xs shrink-0" style={{ background: "#EBF5FF", color: "#0070B3" }}>W</div>
             <div>
               <p className="font-bold text-gray-700">Written by Medical Content Team</p>
               <p className="text-[10px]">Pharmacist reviewed · Updated {new Date().toLocaleDateString("en-IN", { month: "long", year: "numeric" })}</p>

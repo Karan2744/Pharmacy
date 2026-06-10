@@ -7,8 +7,8 @@ import { useCart } from "@/components/CartContext";
 import { ArrowRight, ArrowLeft, Banknote, CreditCard, Smartphone, Shield } from "lucide-react";
 import CheckoutSteps from "@/components/CheckoutSteps";
 
-const PRIMARY = "#e73096";
-const PRIMARY_DARK = "#c4007a";
+const PRIMARY = "#0070B3";
+const PRIMARY_DARK = "#005A92";
 
 const PAYMENT_OPTIONS = [
   {
@@ -86,7 +86,7 @@ export default function CheckoutPaymentPage() {
                         <div className="w-2.5 h-2.5 rounded-full" style={{ backgroundColor: PRIMARY }} />
                       )}
                     </div>
-                    <div className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0" style={{ backgroundColor: "#fce4f3" }}>
+                    <div className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0" style={{ backgroundColor: "#EBF5FF" }}>
                       <Icon size={20} style={{ color: PRIMARY }} />
                     </div>
                     <div className="flex-1">

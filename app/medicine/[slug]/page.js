@@ -81,13 +81,13 @@ export default async function ProductPage({ params }) {
       {/* Breadcrumb */}
       <div className="bg-white border-b border-gray-100 sticky top-0 z-10">
         <div className="max-w-6xl mx-auto px-4 md:px-6 py-3 flex items-center gap-1.5 text-xs text-gray-400 overflow-x-auto no-scrollbar">
-          <Link href="/"       className="hover:text-[#e73096] font-medium whitespace-nowrap">Home</Link>
+          <Link href="/"       className="hover:text-[#0070B3] font-medium whitespace-nowrap">Home</Link>
           <ChevronRight size={11} />
-          <Link href="/search" className="hover:text-[#e73096] font-medium whitespace-nowrap">Medicines</Link>
+          <Link href="/search" className="hover:text-[#0070B3] font-medium whitespace-nowrap">Medicines</Link>
           {p.category && (
             <>
               <ChevronRight size={11} />
-              <Link href={`/categories/${slugify(p.category)}`} className="hover:text-[#e73096] font-medium whitespace-nowrap">
+              <Link href={`/categories/${slugify(p.category)}`} className="hover:text-[#0070B3] font-medium whitespace-nowrap">
                 {p.category}
               </Link>
             </>
@@ -97,7 +97,7 @@ export default async function ProductPage({ params }) {
               <ChevronRight size={11} />
               <Link
                 href={`/categories/${slugify(p.category)}?sub=${encodeURIComponent(p.subCategory)}`}
-                className="hover:text-[#e73096] font-medium whitespace-nowrap"
+                className="hover:text-[#0070B3] font-medium whitespace-nowrap"
               >
                 {p.subCategory}
               </Link>

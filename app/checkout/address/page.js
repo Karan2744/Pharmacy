@@ -7,8 +7,8 @@ import { useCart } from "@/components/CartContext";
 import { MapPin, Phone, User, ArrowRight, ArrowLeft, Home, Plus } from "lucide-react";
 import CheckoutSteps from "@/components/CheckoutSteps";
 
-const PRIMARY = "#e73096";
-const PRIMARY_DARK = "#c4007a";
+const PRIMARY = "#0070B3";
+const PRIMARY_DARK = "#005A92";
 
 const INDIAN_STATES = [
   "Andhra Pradesh","Arunachal Pradesh","Assam","Bihar","Chhattisgarh","Goa","Gujarat",
@@ -174,7 +174,7 @@ export default function CheckoutAddressPage() {
             {(showForm || savedAddresses.length === 0) && (
               <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-6">
                 <div className="flex items-center gap-3 mb-6">
-                  <div className="w-9 h-9 rounded-xl flex items-center justify-center" style={{ backgroundColor: "#fce4f3" }}>
+                  <div className="w-9 h-9 rounded-xl flex items-center justify-center" style={{ backgroundColor: "#EBF5FF" }}>
                     <MapPin size={18} style={{ color: PRIMARY }} />
                   </div>
                   <h2 className="font-extrabold text-gray-900">Add Delivery Address</h2>

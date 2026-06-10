@@ -8,7 +8,7 @@ import dynamic from "next/dynamic";
 
 const InvoiceBill = dynamic(() => import("@/components/InvoiceBill"), { ssr: false });
 
-const PRIMARY = "#e73096";
+const PRIMARY = "#0070B3";
 
 function SuccessContent() {
   const params   = useSearchParams();
@@ -41,7 +41,7 @@ function SuccessContent() {
         <div className="bg-white rounded-3xl shadow-xl border border-gray-100 overflow-hidden">
 
           {/* Pink header */}
-          <div className="relative px-8 py-10 text-center overflow-hidden" style={{ background: `linear-gradient(135deg, ${PRIMARY} 0%, #c4007a 100%)` }}>
+          <div className="relative px-8 py-10 text-center overflow-hidden" style={{ background: `linear-gradient(135deg, ${PRIMARY} 0%, #005A92 100%)` }}>
             <div className="absolute inset-0 opacity-10">
               <div className="absolute top-0 right-0 w-48 h-48 bg-white rounded-full translate-x-24 -translate-y-24" />
               <div className="absolute bottom-0 left-0 w-64 h-64 bg-white rounded-full -translate-x-32 translate-y-32" />
@@ -94,7 +94,7 @@ function SuccessContent() {
 
             {/* Info boxes */}
             <div className="grid grid-cols-2 gap-3">
-              <div className="rounded-xl p-3 border" style={{ background: "#fce4f3", borderColor: "#f8b4dd" }}>
+              <div className="rounded-xl p-3 border" style={{ background: "#EBF5FF", borderColor: "#f8b4dd" }}>
                 <Truck size={18} style={{ color: PRIMARY }} className="mb-1.5" />
                 <p className="text-xs font-bold text-gray-800">Free Delivery</p>
                 <p className="text-[10px] text-gray-500 mt-0.5">Delivered to your door</p>
@@ -124,7 +124,7 @@ function SuccessContent() {
                   onClick={() => setShowInvoice(true)}
                   className="w-full py-3.5 font-bold rounded-xl text-sm text-center transition-colors border-2 flex items-center justify-center gap-2"
                   style={{ borderColor: PRIMARY, color: PRIMARY }}
-                  onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = "#fce4f3"; }}
+                  onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = "#EBF5FF"; }}
                   onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = "transparent"; }}
                 >
                   <FileText size={16} /> View / Print Invoice
@@ -132,7 +132,7 @@ function SuccessContent() {
               )}
               <Link href="/" className="w-full py-3.5 text-white font-bold rounded-xl text-sm text-center transition-colors shadow-lg flex items-center justify-center gap-2"
                 style={{ backgroundColor: PRIMARY }}
-                onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#c4007a")}
+                onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#005A92")}
                 onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = PRIMARY)}>
                 <ShoppingBag size={16} /> Continue Shopping
               </Link>
@@ -158,7 +158,7 @@ function SuccessContent() {
 
 export default function SuccessPage() {
   return (
-    <Suspense fallback={<div className="min-h-screen flex items-center justify-center"><div className="w-8 h-8 border-2 border-t-transparent rounded-full animate-spin" style={{ borderColor: "#e73096" }} /></div>}>
+    <Suspense fallback={<div className="min-h-screen flex items-center justify-center"><div className="w-8 h-8 border-2 border-t-transparent rounded-full animate-spin" style={{ borderColor: "#0070B3" }} /></div>}>
       <SuccessContent />
     </Suspense>
   );

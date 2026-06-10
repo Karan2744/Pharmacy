@@ -71,7 +71,7 @@ function SearchContent() {
       {/* Search Bar Hero */}
       <div className="bg-white border-b border-gray-100 py-6 px-4">
         <div className="max-w-2xl mx-auto">
-          <div className="flex items-center border-2 border-[#e73096] rounded-full overflow-hidden bg-white h-[52px] focus-within:ring-4 focus-within:ring-pink-100 transition-all shadow-sm">
+          <div className="flex items-center border-2 border-[#0070B3] rounded-full overflow-hidden bg-white h-[52px] focus-within:ring-4 focus-within:ring-pink-100 transition-all shadow-sm">
             <Search className="ml-4 text-gray-400 shrink-0" size={20} />
             <input
               type="text"
@@ -83,7 +83,7 @@ function SearchContent() {
             />
             <button
               onClick={handleSearch}
-              className="bg-[#e73096] text-white px-8 h-full font-bold text-sm hover:bg-[#c4007a] transition-colors"
+              className="bg-[#0070B3] text-white px-8 h-full font-bold text-sm hover:bg-[#005A92] transition-colors"
             >
               SEARCH
             </button>
@@ -110,7 +110,7 @@ function SearchContent() {
           <div className="mb-6">
             <h1 className="text-2xl md:text-3xl font-extrabold text-gray-900 mb-1">
               Search results for{" "}
-              <span className="text-[#e73096]">"{query}"</span>
+              <span className="text-[#0070B3]">"{query}"</span>
             </h1>
             {!loading && (
               <p className="text-sm text-gray-500">
@@ -145,7 +145,7 @@ function SearchContent() {
             ? (
               <div className="col-span-full py-24 text-center">
                 <div className="w-24 h-24 bg-blue-50 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <Search size={40} className="text-[#e73096]" />
+                  <Search size={40} className="text-[#0070B3]" />
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-2">Start searching</h3>
                 <p className="text-gray-500">Type a medicine name, brand, or category above to find products.</p>
@@ -163,7 +163,7 @@ function SearchContent() {
                 </p>
                 <Link
                   href="/"
-                  className="inline-block px-8 py-3 bg-[#e73096] text-white font-bold rounded-2xl hover:bg-[#c4007a] transition-colors shadow-lg shadow-pink-100"
+                  className="inline-block px-8 py-3 bg-[#0070B3] text-white font-bold rounded-2xl hover:bg-[#005A92] transition-colors shadow-lg shadow-pink-100"
                 >
                   Browse All Products
                 </Link>
@@ -255,7 +255,7 @@ export default function SearchPage() {
       fallback={
         <div className="min-h-screen flex items-center justify-center bg-gray-50">
           <div className="text-center">
-            <div className="w-12 h-12 border-4 border-[#e73096] border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
+            <div className="w-12 h-12 border-4 border-[#0070B3] border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
             <p className="text-gray-500 font-bold">Searching…</p>
           </div>
         </div>

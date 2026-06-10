@@ -24,11 +24,11 @@ export default function CheckoutSteps({ current }) {
                   <Link href={step.href} className="flex items-center gap-1.5 group">
                     <span
                       className="flex items-center justify-center w-5 h-5 rounded-full text-white text-[10px] font-bold flex-shrink-0"
-                      style={{ backgroundColor: "#e73096" }}
+                      style={{ backgroundColor: "#0070B3" }}
                     >
                       <Check size={11} />
                     </span>
-                    <span className="text-[11px] font-bold hidden sm:block" style={{ color: "#e73096" }}>
+                    <span className="text-[11px] font-bold hidden sm:block" style={{ color: "#0070B3" }}>
                       {step.label}
                     </span>
                   </Link>
@@ -37,7 +37,7 @@ export default function CheckoutSteps({ current }) {
                     <span
                       className="flex items-center justify-center w-5 h-5 rounded-full text-[10px] font-bold flex-shrink-0"
                       style={{
-                        backgroundColor: active ? "#e73096" : "#f0f0f0",
+                        backgroundColor: active ? "#0070B3" : "#f0f0f0",
                         color: active ? "#fff" : "#9ca3af",
                       }}
                     >
@@ -45,7 +45,7 @@ export default function CheckoutSteps({ current }) {
                     </span>
                     <span
                       className="text-[11px] font-bold hidden sm:block"
-                      style={{ color: active ? "#e73096" : "#9ca3af" }}
+                      style={{ color: active ? "#0070B3" : "#9ca3af" }}
                     >
                       {step.label}
                     </span>

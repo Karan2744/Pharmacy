@@ -128,12 +128,12 @@ export default function LoginModal({ isOpen, onClose }) {
             </div>
 
             <div className="flex items-center gap-3 mb-8">
-              <div className="w-12 h-12 bg-gradient-to-br from-[#e73096] to-[#c4007a] rounded-xl flex items-center justify-center text-white">
+              <div className="w-12 h-12 bg-gradient-to-br from-[#0070B3] to-[#005A92] rounded-xl flex items-center justify-center text-white">
                 <span className="text-2xl">💊</span>
               </div>
               <div>
                 <h1 className="text-2xl font-black text-gray-900">
-                  Maurya<span className="text-[#e73096]">Rx</span>
+                  Maurya<span className="text-[#0070B3]">Rx</span>
                 </h1>
                 <p className="text-xs text-gray-400">Maurya Pharmacy</p>
               </div>

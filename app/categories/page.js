@@ -9,10 +9,10 @@ const categories = [
     href: "/categories/medicines",
     image: "https://assets.truemeds.in/Images/HomepageImage/Picture_1698138109947_1.png",
     bgColor: "bg-blue-50",
-    textColor: "text-[#e73096]",
+    textColor: "text-[#0070B3]",
     subItems: ["Pain Relief", "Cold & Cough", "Antibiotics", "Heart Care"],
     badge: "Upto 51% off",
-    badgeColor: "bg-blue-100 text-[#e73096]",
+    badgeColor: "bg-blue-100 text-[#0070B3]",
   },
   {
     title: "Personal Care",
@@ -77,7 +77,7 @@ export default function CategoriesPage() {
       {/* Breadcrumb */}
       <div className="bg-white border-b border-gray-100">
         <div className="max-w-7xl mx-auto px-4 md:px-6 py-3 flex items-center gap-2 text-xs text-gray-500">
-          <Link href="/" className="hover:text-[#e73096] transition-colors font-medium">Home</Link>
+          <Link href="/" className="hover:text-[#0070B3] transition-colors font-medium">Home</Link>
           <ChevronRight size={12} />
           <span className="text-gray-900 font-semibold">All Categories</span>
         </div>
@@ -94,9 +94,9 @@ export default function CategoriesPage() {
         {/* Trust strip */}
         <div className="bg-[#e8f6fc] rounded-2xl px-5 py-3 mb-8 flex flex-wrap items-center justify-center gap-6">
           {[
-            { icon: <ShieldCheck size={15} className="text-[#e73096]" />, text: "FDA/GMP Certified" },
-            { icon: <CheckCircle size={15} className="text-[#e73096]" />, text: "100% Genuine Medicines" },
-            { icon: <Truck size={15} className="text-[#e73096]" />, text: "Free delivery above ₹500" },
+            { icon: <ShieldCheck size={15} className="text-[#0070B3]" />, text: "FDA/GMP Certified" },
+            { icon: <CheckCircle size={15} className="text-[#0070B3]" />, text: "100% Genuine Medicines" },
+            { icon: <Truck size={15} className="text-[#0070B3]" />, text: "Free delivery above ₹500" },
           ].map((b) => (
             <div key={b.text} className="flex items-center gap-2 text-xs font-semibold text-gray-700">
               {b.icon} {b.text}
@@ -131,10 +131,10 @@ export default function CategoriesPage() {
               {/* Details */}
               <div className="p-5 flex flex-col flex-1">
                 <div className="flex items-center justify-between mb-1">
-                  <h2 className="font-extrabold text-gray-900 text-base group-hover:text-[#e73096] transition-colors">
+                  <h2 className="font-extrabold text-gray-900 text-base group-hover:text-[#0070B3] transition-colors">
                     {cat.title}
                   </h2>
-                  <ChevronRight size={16} className="text-gray-300 group-hover:text-[#e73096] transition-colors" />
+                  <ChevronRight size={16} className="text-gray-300 group-hover:text-[#0070B3] transition-colors" />
                 </div>
                 <p className="text-xs text-gray-500 mb-4">{cat.description}</p>
 
@@ -163,7 +163,7 @@ export default function CategoriesPage() {
               <Link
                 key={term}
                 href={`/search?q=${encodeURIComponent(term)}`}
-                className="text-xs font-semibold text-gray-600 bg-gray-50 border border-gray-200 px-3 py-1.5 rounded-full hover:bg-[#e8f6fc] hover:border-[#e73096] hover:text-[#e73096] transition-colors"
+                className="text-xs font-semibold text-gray-600 bg-gray-50 border border-gray-200 px-3 py-1.5 rounded-full hover:bg-[#e8f6fc] hover:border-[#0070B3] hover:text-[#0070B3] transition-colors"
               >
                 {term}
               </Link>

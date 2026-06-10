@@ -8,8 +8,8 @@ import { ArrowLeft, CheckCircle2, MapPin, Phone, Banknote, Truck, Tag } from "lu
 import CheckoutSteps from "@/components/CheckoutSteps";
 import { calcGst } from "@/utils/gst";
 
-const PRIMARY = "#e73096";
-const PRIMARY_DARK = "#c4007a";
+const PRIMARY = "#0070B3";
+const PRIMARY_DARK = "#005A92";
 const FREE_DELIVERY_MIN = 500;
 
 export default function CheckoutSummaryPage() {
@@ -98,7 +98,7 @@ export default function CheckoutSummaryPage() {
             <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-5">
               <div className="flex items-center justify-between mb-3">
                 <div className="flex items-center gap-2">
-                  <div className="w-7 h-7 rounded-lg flex items-center justify-center" style={{ backgroundColor: "#fce4f3" }}>
+                  <div className="w-7 h-7 rounded-lg flex items-center justify-center" style={{ backgroundColor: "#EBF5FF" }}>
                     <MapPin size={14} style={{ color: PRIMARY }} />
                   </div>
                   <h2 className="font-bold text-gray-900 text-sm">Delivery Address</h2>
@@ -116,7 +116,7 @@ export default function CheckoutSummaryPage() {
             <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-5">
               <div className="flex items-center justify-between mb-3">
                 <div className="flex items-center gap-2">
-                  <div className="w-7 h-7 rounded-lg flex items-center justify-center" style={{ backgroundColor: "#fce4f3" }}>
+                  <div className="w-7 h-7 rounded-lg flex items-center justify-center" style={{ backgroundColor: "#EBF5FF" }}>
                     <Banknote size={14} style={{ color: PRIMARY }} />
                   </div>
                   <h2 className="font-bold text-gray-900 text-sm">Payment Method</h2>

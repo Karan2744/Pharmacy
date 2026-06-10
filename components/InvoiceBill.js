@@ -4,8 +4,8 @@ import { QRCodeSVG } from "qrcode.react";
 import { useRef, useState } from "react";
 import { Printer, ArrowLeft, FileText, Receipt, X } from "lucide-react";
 
-const PRIMARY = "#e73096";
-const PRIMARY_DARK = "#c4007a";
+const PRIMARY = "#0070B3";
+const PRIMARY_DARK = "#005A92";
 
 // ── Shared invoice data builder ──────────────────────────────────────────────
 function buildData(order) {
@@ -223,7 +223,7 @@ function PrintOptionsModal({ onSelect, onClose }) {
             onClick={() => onSelect("a4")}
             className="w-full flex items-start gap-4 p-4 rounded-2xl border-2 border-gray-100 hover:border-pink-300 hover:bg-pink-50 transition-all text-left group"
           >
-            <div className="w-12 h-12 rounded-xl flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform" style={{ backgroundColor: "#fce4f3" }}>
+            <div className="w-12 h-12 rounded-xl flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform" style={{ backgroundColor: "#EBF5FF" }}>
               <FileText size={22} style={{ color: PRIMARY }} />
             </div>
             <div>
@@ -236,7 +236,7 @@ function PrintOptionsModal({ onSelect, onClose }) {
             onClick={() => onSelect("thermal")}
             className="w-full flex items-start gap-4 p-4 rounded-2xl border-2 border-gray-100 hover:border-pink-300 hover:bg-pink-50 transition-all text-left group"
           >
-            <div className="w-12 h-12 rounded-xl flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform" style={{ backgroundColor: "#fce4f3" }}>
+            <div className="w-12 h-12 rounded-xl flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform" style={{ backgroundColor: "#EBF5FF" }}>
               <Receipt size={22} style={{ color: PRIMARY }} />
             </div>
             <div>

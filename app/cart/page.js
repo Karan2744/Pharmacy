@@ -9,8 +9,8 @@ import CheckoutSteps from "@/components/CheckoutSteps";
 import { calcGst } from "@/utils/gst";
 
 const FREE_DELIVERY_MIN = 500;
-const PRIMARY = "#e73096";
-const PRIMARY_DARK = "#c4007a";
+const PRIMARY = "#0070B3";
+const PRIMARY_DARK = "#005A92";
 
 export default function CartPage() {
   const router = useRouter();
@@ -25,7 +25,7 @@ export default function CartPage() {
     return (
       <div className="min-h-screen bg-gray-50 flex items-center justify-center px-4 py-10">
         <div className="max-w-sm w-full bg-white rounded-3xl shadow-xl border border-gray-100 p-10 text-center">
-          <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-5" style={{ backgroundColor: "#fce4f3" }}>
+          <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-5" style={{ backgroundColor: "#EBF5FF" }}>
             <ShoppingBag size={28} style={{ color: PRIMARY }} />
           </div>
           <h1 className="text-2xl font-extrabold text-gray-900 mb-2">Login to view cart</h1>
@@ -71,7 +71,7 @@ export default function CartPage() {
       <div className="max-w-6xl mx-auto px-4 md:px-6 pt-6">
         {cartItems.length === 0 ? (
           <div className="bg-white rounded-2xl border border-gray-100 shadow-sm py-24 text-center">
-            <div className="w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-5" style={{ backgroundColor: "#fce4f3" }}>
+            <div className="w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-5" style={{ backgroundColor: "#EBF5FF" }}>
               <ShoppingBag size={36} style={{ color: PRIMARY }} />
             </div>
             <h2 className="text-xl font-extrabold text-gray-900 mb-2">Your cart is empty</h2>
@@ -101,14 +101,14 @@ export default function CartPage() {
                   </div>
                 </div>
               ) : (
-                <div className="rounded-2xl px-5 py-3 flex items-center gap-2" style={{ background: "#fce4f3", border: "1px solid #f8b4dd" }}>
+                <div className="rounded-2xl px-5 py-3 flex items-center gap-2" style={{ background: "#EBF5FF", border: "1px solid #f8b4dd" }}>
                   <Truck size={15} style={{ color: PRIMARY }} />
                   <p className="text-xs font-bold" style={{ color: PRIMARY }}>🎉 You've unlocked FREE delivery!</p>
                 </div>
               )}
 
               {/* Generic substitute banner */}
-              <div className="rounded-2xl px-5 py-4 flex items-start gap-3" style={{ background: "#fce4f3", border: "1px solid #f8b4dd" }}>
+              <div className="rounded-2xl px-5 py-4 flex items-start gap-3" style={{ background: "#EBF5FF", border: "1px solid #f8b4dd" }}>
                 <CheckCircle size={18} style={{ color: PRIMARY }} className="shrink-0 mt-0.5" />
                 <div>
                   <p className="text-sm font-bold text-gray-800">Save more with Generic Substitutes</p>

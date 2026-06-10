@@ -45,7 +45,7 @@ export default function PopularItemsClient({ items }) {
                 const mrpWithGst = item.mrp && gst > 0 ? item.mrp * (1 + gst / 100) : item.mrp;
                 const disc = mrpWithGst && item.price ? Math.round(((mrpWithGst - item.price) / mrpWithGst) * 100) : 0;
                 return disc > 0 && (
-                  <div className="absolute top-2 left-2 text-white text-[10px] font-black px-2 py-0.5 rounded-md" style={{ backgroundColor: "#e73096" }}>
+                  <div className="absolute top-2 left-2 text-white text-[10px] font-black px-2 py-0.5 rounded-md" style={{ backgroundColor: "#0070B3" }}>
                     {disc}%
                   </div>
                 );
@@ -101,9 +101,9 @@ export default function PopularItemsClient({ items }) {
                   type="button"
                   onClick={(e) => handleAdd(e, item)}
                   className="text-[10px] md:text-xs font-bold px-2.5 py-1 rounded-lg border-2 transition-colors"
-                  style={{ borderColor: "#e73096", color: "#e73096" }}
-                  onMouseEnter={(e) => { e.currentTarget.style.background = "#e73096"; e.currentTarget.style.color = "#fff"; }}
-                  onMouseLeave={(e) => { e.currentTarget.style.background = ""; e.currentTarget.style.color = "#e73096"; }}
+                  style={{ borderColor: "#0070B3", color: "#0070B3" }}
+                  onMouseEnter={(e) => { e.currentTarget.style.background = "#0070B3"; e.currentTarget.style.color = "#fff"; }}
+                  onMouseLeave={(e) => { e.currentTarget.style.background = ""; e.currentTarget.style.color = "#0070B3"; }}
                 >
                   ADD
                 </button>
