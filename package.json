@@ -1,0 +1,30 @@
+{
+  "name": "my-app",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev -p 5001",
+    "build": "next build",
+    "start": "next start -p 5001",
+    "lint": "eslint"
+  },
+  "dependencies": {
+    "@aws-sdk/client-sns": "^3.1065.0",
+    "chart.js": "^4.5.1",
+    "html5-qrcode": "^2.3.8",
+    "jose": "^5.10.0",
+    "lucide-react": "^1.16.0",
+    "mongoose": "^9.6.2",
+    "next": "16.2.6",
+    "qrcode.react": "^4.2.0",
+    "react": "19.2.4",
+    "react-chartjs-2": "^5.3.1",
+    "react-dom": "19.2.4"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4",
+    "eslint": "^9",
+    "eslint-config-next": "16.2.6",
+    "tailwindcss": "^4"
+  }
+}
